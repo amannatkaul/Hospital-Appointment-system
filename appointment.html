@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment System</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: url('https://i.pinimg.com/originals/3f/b6/94/3fb6947f7453016773bbfd5b162bdb13.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            width: 40%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        input, button, select {
+            margin: 10px;
+            padding: 12px;
+            width: 90%;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active  {
+            transition: background-color 5000s ease-in-out 0s;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Department</h2>
+        <select id="department">
+            <option>Gynaecology</option>
+            <option>Orthopedics</option>
+            <option>Radiology</option>
+            <option>Cardiology</option>
+            <option>ENT</option>
+            <option>Neurology</option>
+        </select>
+        
+        <h2>Select Doctor</h2>
+        <select id="doctor">
+            <option>Dr. Anjali Mehta (MBBS, MD - Gynae)</option>
+            <option>Dr. Ramesh Patel (MBBS, MS - Ortho)</option>
+            <option>Dr. Priya Sharma (MBBS, MD - Radiology)</option>
+            <option>Dr. Arjun Verma (MBBS, DM - Cardiology)</option>
+            <option>Dr. Neha Roy (MBBS, MS - ENT)</option>
+        </select>
+        
+        <h2>Book an Appointment</h2>
+        <form id="appointmentForm">
+            <input type="text" id="name" placeholder="Full Name" autocomplete="off" required>
+            <input type="text" id="phone" placeholder="Phone Number" autocomplete="off" required>
+            <input type="text" id="address" placeholder="Address" autocomplete="off" required>
+            <input type="number" id="age" placeholder="Age" autocomplete="off" required>
+            <select id="sex">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+            <button type="submit">Proceed</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            localStorage.setItem('appointmentConfirmed', 'true');
+            window.location.href = 'confirmation.html';
+        });
+    </script>
+</body>
+</html>
+
+
